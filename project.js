@@ -131,7 +131,7 @@ export function displayProjects(projectArray) {
 window.loadProjectDetails = (projectId) => {
   try {
     console.log(`Attempting to load details for project ID: ${projectId}`);
-    const project = (window.allProjects || []).find(p => p.id === projectId);
+    const project = (window.allProjects || []).find(p => p.id === Number(projectId));
 
     const detailsContainer = document.getElementById('projectDetails');
     if (!detailsContainer) {

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         throw new Error('Failed to fetch project data.');
       }      
       
-      allProjects = await response.json();
+      allProjects.splice(0, allProjects.length, ...(await response.json()));
       console.log("Projects:");
       allProjects.forEach((project) => {
         try {
